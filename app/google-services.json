@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "350171172117",
+    "firebase_url": "https://laikipia-a8e24.firebaseio.com",
+    "project_id": "laikipia-a8e24",
+    "storage_bucket": "laikipia-a8e24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350171172117:android:a7fe3eb62a3dc2b6956d1c",
+        "android_client_info": {
+          "package_name": "com.example.kenyapolice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350171172117-8kd5nura2rkcmkiltappmn37ektehgfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kenyapolice",
+            "certificate_hash": "572a7eaf74e74cb6e58bbc8b50bf7cc804d5abfb"
+          }
+        },
+        {
+          "client_id": "350171172117-2cngujmnb3m6cu6ctvohiprlu1jsfq81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcrIbmpwVc6xsYEHVcLjNixanAXFq0qhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350171172117-2cngujmnb3m6cu6ctvohiprlu1jsfq81.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350171172117:android:e702e26a3d9b8f9b956d1c",
+        "android_client_info": {
+          "package_name": "com.example.kenyapoliceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350171172117-67jo3tlvjap317jlh95sphbilbkv118m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kenyapoliceapp",
+            "certificate_hash": "572a7eaf74e74cb6e58bbc8b50bf7cc804d5abfb"
+          }
+        },
+        {
+          "client_id": "350171172117-2cngujmnb3m6cu6ctvohiprlu1jsfq81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcrIbmpwVc6xsYEHVcLjNixanAXFq0qhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350171172117-2cngujmnb3m6cu6ctvohiprlu1jsfq81.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350171172117:android:44a04dbb5f425c90956d1c",
+        "android_client_info": {
+          "package_name": "com.example.laikipia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350171172117-m5t3skdvmoh7k8l6gmaaodtshl991jaq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laikipia",
+            "certificate_hash": "572a7eaf74e74cb6e58bbc8b50bf7cc804d5abfb"
+          }
+        },
+        {
+          "client_id": "350171172117-2cngujmnb3m6cu6ctvohiprlu1jsfq81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcrIbmpwVc6xsYEHVcLjNixanAXFq0qhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350171172117-2cngujmnb3m6cu6ctvohiprlu1jsfq81.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

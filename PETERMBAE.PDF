@@ -1,0 +1,147 @@
+
+/*create table employee*/
+CREATE TABLE employee(
+emp_no   VARCHAR(20)   NOT NULL,
+emp_name   VARCHAR(20)   NOT NULL,
+DOB        DATE           NOT NULL,
+adress    VARCHAR(20)    NOT NULL,
+doj        DATE          NOT NULL,
+mobile_no   VARCHAR(20),     
+dept_no     VARCHAR(20)       NOT NULL,
+salary      NUMBER(20)         NOT NULL,
+
+PRIMARY KEY(emp_no)
+);
+ SELECT *FROM employee;
+
+/*create table department*/
+CREATE TABLE department(
+dept_no   VARCHAR(20)    NOT NULL,
+dept_name  VARCHAR(30)    NOT NULL,
+location    VARCHAR(20)     NOT NULL
+);
+SELECT * FROM department;
+/*List all the tables in the current database*/
+LIST TABLES;
+    
+    /*Display the structure of the employee table*/
+  DESC employee;  
+  
+  /*Add a new column Designation to the employee table*/
+  ALTER TABLE employee
+  ADD Designation varchar(30);
+  SELECT *FROM employee;
+  
+  /*Drop the column location from Dept table*/
+  ALTER TABLE department
+  DROP COLUMN location;
+  SELECT *FROM employee;
+  
+  /*Drop the tables*/
+  DROP TABLE employee;
+    DROP TABLE department;
+    LIST TABLES;
+    /*Delete the database*/
+    DROP database trial;
+    
+    /*EXPERIMENT NO: 2 - DATA MANIPULATION LANGUAGE (DML)*/
+   SELECT *FROM employee; 
+   
+   /*Add 5rows in the employee and dept tables*/
+   /*since we deleted our tables we have to readd them */
+INSERT INTO employee(emp_no,emp_name,DOB,adress,doj,mobile_no,dept_no,salary,designation)
+VALUES('123','john','12-DEC-1988','567-NYAHURURU','14-AUG-2005','0717568362','Department1','50000.00','Receptionist');
+INSERT INTO employee(emp_no,emp_name,DOB,adress,doj,mobile_no,dept_no,salary,designation)
+VALUES('124','Macharia','18-APR-1976','4-NAIROBI','12-JUN-2004','0715673920','Department2','40000.00','Clerk');
+INSERT INTO employee(emp_no,emp_name,DOB,adress,doj,mobile_no,dept_no,salary,designation)
+VALUES('125','peter','4-MAY-1991','561-KIAMBU','23-FEB-1995','0762846362','Department2','60000.00','Sales');
+INSERT INTO employee(emp_no,emp_name,DOB,adress,doj,mobile_no,dept_no,salary,designation)
+VALUES('126','Carol','17-JUN-1999','341-THIKA','24-DEC-2013','07527583','Department7','25000.00','Catering');
+INSERT INTO employee(emp_no,emp_name,DOB,adress,doj,mobile_no,dept_no,salary,designation)
+VALUES('127','Frazy','28-SEP-2000','111-TAITA','04-JUL-2010','0753627484','Department5','80000.00','Sports');
+    DESC employee;
+
+SELECT *FROM department;
+INSERT INTO department(dept_no,dept_name)
+VALUES('Department1','Receptionist','nyahururu');
+INSERT INTO department(dept_no,dept_name)
+VALUES('Department2','Clerk','nakuru');
+INSERT INTO department(dept_no,dept_name)
+VALUES('Department5','Sports','nairobi');
+
+/*Display all the records from the above tables*/
+SELECT *FROM employee;
+SELECT *FROM department;
+UPDATE employee set Designation='typist' WHERE emp_no='123';
+/*Display the empno and name of all the employees from department no2*/
+SELECT emp_no,emp_name FROM employee WHERE dept_no='dept2';
+
+/*Display empno, name, designation, deptno and salary in the descending order of salary*/
+
+SELECT emp_no,emp_name,DeSignation,dept_no,salary FROM employee ORDER BY salary DESC;
+
+/*Display the empno and name of all employees whose salary is between 2000 and 5000*/
+SELECT emp_no,emp_name FROM employee WHERE salary BETWEEN '2000' AND '5000';
+
+/*Display all designations without duplicate values.*/
+
+SELECT DISTINCT Designation FROM employee;
+
+/*Display the dept name and total salary of employees of each department.*/
+SELECT dept_no, 
+SUM (salary) FROM employee GROUP BY dept_no;
+
+/*Change the salary of employees to 25000 whose designation is ‘typist’*/
+
+UPDATE employee SET salary='25000'
+WHERE Designation='typist';
+
+/*Change the mobile no of employee named ‘john..used peter’*/
+UPDATE employee SET mobile_no='+254703615784'
+WHERE emp_name='Peter';
+
+/*Delete all employees whose salaries are equal to Ksh.7000*/
+UPDATE employee SET salary='7000'
+WHERE emp_name='Frazy';
+
+DELETE FROM employee WHERE salary='7000';
+
+/*Select the department that has total salary paid for its employees more than 30000*/
+SELECT dept_no,SUM(salary) FROM employee 
+GROUP BY dept_no HAVING SUM(salary)>25000
+ORDER BY SUM(salary);
+
+
+/*EXPERIMENT NO: 3 - SUB QUERIES AND JOINS*/
+
+/*Display the empno, name, and salaries for employees whose average salary is
+higher than the average salary of the organization*/
+
+SELECT emp_no,emp_name,salary FROM employee WHERE salary>(SELECT AVG(salary) FROM employee) ORDER BY dept_no;
+
+/*Display the details of employees whose salary is equal to the minimumsalary of organization.*/
+
+SELECT emp_no,emp_name,DOB,adress,doj,mobile_no,salary,designation FROM employee WHERE salary=(SELECT MIN(salary)FROM employee);
+
+SELECT *FROM department;
+
+/*Display all the employees whose designation is same as that of ‘Arun..used peter’*/
+update employee set designation='cat' where emp_no='125';
+
+SELECT *FROM employee WHERE Designation LIKE '%Sales%';
+
+/*Display the empno and name of employees who earn more than any Employee in dept1.*/
+select emp_no,emp_name,salary from employee where salary>3500 OR salary>25000;
+
+/*Display the empno,name , departments that the departments are same in both the emp and dept*/
+SELECT emp_no,emp_name FROM department,employee WHERE 'dept_no.dept_name'='dept_no.emp_no'ORDER BY emp_name;
+
+/*Display the employee details by implementing left inner join*/
+select employee.emp_no,employee.emp_name,department.dept_no FROM employee LEFT JOIN department ON 
+employee.dept_no=department.dept_no ORDER BY employee.emp_name;
+
+/*Display employee details by implementing a right outer join*/
+select employee.emp_no,employee.emp_name,department.dept_no FROM employee RIGHT JOIN department ON 
+employee.dept_no=department.dept_no ORDER BY employee.emp_name;
+
+);
